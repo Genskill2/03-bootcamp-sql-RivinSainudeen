@@ -9,7 +9,7 @@ CREATE TABLE [IF NOT EXISTS] publisher (
 CREATE TABLE [IF NOT EXISTS] books(
 	id INTEGER PRIMARY KEY,
 	title TEXT,
-	publisher INTEGER NOT NULL,
+	publisher INTEGER NOT NULL
 	REFERENCES publisher (id)
 	);
 	
