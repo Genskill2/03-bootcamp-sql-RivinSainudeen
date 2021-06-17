@@ -1,3 +1,4 @@
 select b.title 
-from books as b, publisher as p 
-where b.publisher = p.id;
+from books as b join publisher as p 
+on b.publisher = p.id
+where p.name is 'PHI';
