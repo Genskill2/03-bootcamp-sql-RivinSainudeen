@@ -1,4 +1,4 @@
-select distinct b.title 
-from books as b join books_subjects as bs join subjects as s
-on bs.subject = s.id
-where s.name in ("Technology","Politics");
+SELECT DISTINCT(b.title)
+FROM books b,books_subjects s
+WHERE b.id  IN (SELECT s.book FROM books_subjects s WHERE
+s.subject IN (SELECT id FROM subjects WHERE name = "Technology" OR name = "Politics"));
