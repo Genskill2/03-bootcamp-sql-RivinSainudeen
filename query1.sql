@@ -1,4 +1,1 @@
-select b.title 
-from books as b join publisher as p 
-on b.publisher = p.id
-where p.name is 'PHI';
+SELECT title FROM books WHERE publisher=(SELECT ID FROM publisher WHERE name = 'PHI');
