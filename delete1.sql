@@ -1,8 +1,4 @@
-delete from books_subjects 
-where subject in (select bs.subject from books_subjects as bs join subjects as s
-	on bs.subject = s.id
-	where s.name is 'History'
-	);
-	
-delete from subjects 
-where name = "History";
+DELETE FROM books_subjects
+WHERE books_subjects.subject = (SELECT id FROM subjects WHERE name = "History");
+DELETE FROM subjects
+WHERE name = "History";
